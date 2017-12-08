@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}Presenter{% endblock %}</title>
+    <link rel='stylesheet' type='text/css' href='{{STATIC_URL}}/presenter/css/material.min.css'/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    {% block styles %}{% endblock %}
+  </head>
+  <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      {% include "layout/navigation.html" %}
+      {% block content %}{% endblock %}
+      {% include "layout/footer.html" %}
+    </div>
+    <script src="{{STATIC_URL}}/presenter/js/material.min.js"></script>
+    {% block scripts %}{% endblock %}
+  </body>
+</html>
